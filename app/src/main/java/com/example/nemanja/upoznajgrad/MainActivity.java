@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        startService(new Intent(this,MyService.class));
+
         Button map=(Button) findViewById(R.id.button2);
         map.setOnClickListener(new View.OnClickListener() {
             @Override
