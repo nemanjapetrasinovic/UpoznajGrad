@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "369139867188-5i6iqau3cst0fjdcoa48ve906a9c3lf9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nemanja.upoznajgrad",
+            "certificate_hash": "d813a8afa88231a7ed67f4b5ddba403a7805d935"
+          }
+        },
+        {
           "client_id": "369139867188-0ro50i63sqid6i8nnlbr70niukrlkfe9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -18,13 +18,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
-
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
@@ -65,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent register = new Intent(LoginActivity.this.getApplicationContext(), RegisterActivity.class);
-                LoginActivity.this.startActivity(register);
+                startActivity(register);
             }
         });
 
@@ -73,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
         openMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent openMain=new Intent(LoginActivity.this.getApplicationContext(),MainActivity.class);
+                Intent openMain=new Intent(LoginActivity.this.getApplicationContext(),RegisterActivity.class);
                 startActivity(openMain);
             }
         });
