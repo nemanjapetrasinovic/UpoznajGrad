@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">UpoznajGrad</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+
+    <string name="niska_tvrdjava">
+
+        Današnji izgled Niške tvrđave, koja se na površini od 22 hektara uzdiže na desnoj obali reke Nišave, potiče iz prve
+        polovine 18. veka. Oktagonalna građevina sa bedemima visokim 8 metara, ubraja se u najlepše i najbolje očuvane na
+        srednjem Balkanu. Sagrađena je na ostatcima antičkog, vizantijskog i srednjevekovnog utvrđenjana mestu gde su u 1. veku
+        rimske legije podigle prvu utvrdu.
+
+    </string>
 </resources>
