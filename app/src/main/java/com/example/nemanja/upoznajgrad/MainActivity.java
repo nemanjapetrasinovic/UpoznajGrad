@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,6 +50,15 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openMap=new Intent(MainActivity.this.getApplicationContext(),MapsActivity.class);
                 startActivity(openMap);
+            }
+        });
+
+        LinearLayout NiskaTvrdjava= (LinearLayout) findViewById(R.id.niska_tvrdjava);
+        NiskaTvrdjava.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
+                startActivity(openInfo);
             }
         });
     }
