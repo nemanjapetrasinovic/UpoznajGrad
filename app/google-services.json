@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "369139867188",
+    "firebase_url": "https://upoznajgrad.firebaseio.com",
+    "project_id": "upoznajgrad",
+    "storage_bucket": "upoznajgrad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369139867188:android:29a846a5bc90bfe2",
+        "android_client_info": {
+          "package_name": "com.example.nemanja.upoznajgrad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369139867188-0ro50i63sqid6i8nnlbr70niukrlkfe9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nemanja.upoznajgrad",
+            "certificate_hash": "aef584cf475adbc23dc12722e6eb560a56b5952b"
+          }
+        },
+        {
+          "client_id": "369139867188-29is1sl10s1c679qsf2eb13192bhi4j3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOMKDvbJsMAjqxgrXf58PZOFFi-XAckd8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369139867188-29is1sl10s1c679qsf2eb13192bhi4j3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
