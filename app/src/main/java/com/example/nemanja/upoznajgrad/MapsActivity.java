@@ -26,14 +26,13 @@ package com.example.nemanja.upoznajgrad;
         import java.util.ArrayList;
         import java.util.List;
 
-        import com.example.nemanja.upoznajgrad.DirectionFinder;
-        import com.example.nemanja.upoznajgrad.DirectionFinderListener;
-        import com.example.nemanja.upoznajgrad.Route;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener {
 
     private GoogleMap mMap;
     private Button btnFindPath;
+//    private EditText etOrigin;
+//    private EditText etDestination;
     private List<Marker> originMarkers = new ArrayList<>();
     private List<Marker> destinationMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
@@ -49,6 +48,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
 
         btnFindPath = (Button) findViewById(R.id.btnFindPath);
+    //    etOrigin = (EditText) findViewById(R.id.etOrigin);
+    //    etDestination = (EditText) findViewById(R.id.etDestination);
 
         btnFindPath.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,6 +126,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         for (Route route : routes) {
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(route.startLocation, 16));
+            //((TextView) findViewById(R.id.tvDuration)).setText(route.duration.text);
             ((TextView) findViewById(R.id.tvDistance)).setText(route.distance.text);
 
             originMarkers.add(mMap.addMarker(new MarkerOptions()
