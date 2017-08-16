@@ -2,7 +2,12 @@ package com.example.nemanja.upoznajgrad;
 
 import android.app.NotificationManager;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.NotificationCompat;
 
@@ -35,10 +40,42 @@ public class MyService extends Service {
                 (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
 
-        mBuilder.setVibrate(new long[] {125,75,125,275,200,275,125,75,125,275,200,600,200,600});
+        mBuilder.setVibrate(new long[] {1000,200,1000,200});
 
         mNotifyMgr.notify(mNotificationId, mBuilder.build());
         mNotificationId++;
 
+        LocationManager mLocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000,
+                100, mLocationListener);
+
     }
+
+    private final LocationListener mLocationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(final Location location) {
+            //your code here
+            double longitude=location.getLongitude();
+            double latitude=location.getLatitude();
+            System.out.println(longitude);
+            System.out.println(latitude);
+        }
+
+        @Override
+        public void onProviderDisabled(String provider) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String provider) {
+
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+
+        }
+    };
+
 }
