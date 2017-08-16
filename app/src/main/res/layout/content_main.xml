@@ -24,10 +24,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="56dp"
         android:paddingLeft="10pt"
         android:paddingRight="10pt"
-        android:paddingTop="25pt"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2">

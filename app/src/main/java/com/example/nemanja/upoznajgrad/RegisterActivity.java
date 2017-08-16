@@ -1,12 +1,16 @@
 package com.example.nemanja.upoznajgrad;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,26 +22,29 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
-/*import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;*/
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
-
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseStorage storage;
     private StorageReference storageRef;
-    //   private DatabaseReference mDatabase;
+    private DatabaseReference mDatabase;
     private Uri selectedImage;
 
     private static int RESULT_LOAD_IMAGE = 1;
@@ -99,7 +106,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-
     public void createAccount(){
         EditText emailEdit=(EditText) findViewById(R.id.editTextEmail);
         EditText passwordEdit=(EditText) findViewById(R.id.editTextPassword);
@@ -119,13 +125,11 @@ public class RegisterActivity extends AppCompatActivity {
                             UpdateUserProfile();
                             Intent i=new Intent(RegisterActivity.this.getApplicationContext(),MainActivity.class);
                             RegisterActivity.this.startActivity(i);
-                            Toast.makeText(RegisterActivity.this, "USPEO SI KURCE Authentication succed.",
-                                    Toast.LENGTH_SHORT).show();
 
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(RegisterActivity.this, "JEBI SE MARKO Authentication failed.",
+                            Toast.makeText(RegisterActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
 
@@ -205,16 +209,16 @@ public class RegisterActivity extends AppCompatActivity {
                 });
 
 
-       /* Traveller t=new Traveller();
+        /*Traveller t=new Traveller();
         t.setFirstname(nameEdit.getText().toString());
         t.setLastname(lastnameEdit.getText().toString());
         t.setPhonenumber(phoneEdit.getText().toString());
         t.setEmail(user.getEmail());
         mDatabase= FirebaseDatabase.getInstance().getReference();
-        *//*mDatabase.child("user").child(user.getUid()).child("firstname").setValue(nameEdit.getText().toString());
+        /*mDatabase.child("user").child(user.getUid()).child("firstname").setValue(nameEdit.getText().toString());
         mDatabase.child("user").child(user.getUid()).child("lastname").setValue(lastnameEdit.getText().toString());
-        mDatabase.child("user").child(user.getUid()).child("phone").setValue(phoneEdit.getText().toString());*//*
-        mDatabase.child("user").child(user.getUid()).setValue(t);*/
+        mDatabase.child("user").child(user.getUid()).child("phone").setValue(phoneEdit.getText().toString());*/
+        //mDatabase.child("user").child(user.getUid()).setValue(t);
     }
 
     @Override
