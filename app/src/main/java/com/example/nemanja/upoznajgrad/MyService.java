@@ -40,42 +40,10 @@ public class MyService extends Service {
                 (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
 
-        mBuilder.setVibrate(new long[] {1000,200,1000,200});
+        mBuilder.setVibrate(new long[]{1000, 200, 1000, 200});
 
         mNotifyMgr.notify(mNotificationId, mBuilder.build());
         mNotificationId++;
-
-        LocationManager mLocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-
-        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000,
-                100, mLocationListener);
-
     }
-
-    private final LocationListener mLocationListener = new LocationListener() {
-        @Override
-        public void onLocationChanged(final Location location) {
-            //your code here
-            double longitude=location.getLongitude();
-            double latitude=location.getLatitude();
-            System.out.println(longitude);
-            System.out.println(latitude);
-        }
-
-        @Override
-        public void onProviderDisabled(String provider) {
-
-        }
-
-        @Override
-        public void onProviderEnabled(String provider) {
-
-        }
-
-        @Override
-        public void onStatusChanged(String provider, int status, Bundle extras) {
-
-        }
-    };
 
 }
