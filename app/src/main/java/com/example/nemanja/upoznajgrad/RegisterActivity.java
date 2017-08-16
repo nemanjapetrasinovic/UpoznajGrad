@@ -24,10 +24,13 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 /*import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;*/
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import com.example.nemanja.upoznajgrad.Korisnik;
 import java.io.ByteArrayOutputStream;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -37,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseStorage storage;
     private StorageReference storageRef;
-    //   private DatabaseReference mDatabase;
+    private DatabaseReference mDatabase;
     private Uri selectedImage;
 
     private static int RESULT_LOAD_IMAGE = 1;
@@ -205,16 +208,17 @@ public class RegisterActivity extends AppCompatActivity {
                 });
 
 
-       /* Traveller t=new Traveller();
+
+        Korisnik t=new Korisnik();
         t.setFirstname(nameEdit.getText().toString());
         t.setLastname(lastnameEdit.getText().toString());
         t.setPhonenumber(phoneEdit.getText().toString());
         t.setEmail(user.getEmail());
         mDatabase= FirebaseDatabase.getInstance().getReference();
-        *//*mDatabase.child("user").child(user.getUid()).child("firstname").setValue(nameEdit.getText().toString());
+        /*mDatabase.child("user").child(user.getUid()).child("firstname").setValue(nameEdit.getText().toString());
         mDatabase.child("user").child(user.getUid()).child("lastname").setValue(lastnameEdit.getText().toString());
-        mDatabase.child("user").child(user.getUid()).child("phone").setValue(phoneEdit.getText().toString());*//*
-        mDatabase.child("user").child(user.getUid()).setValue(t);*/
+        mDatabase.child("user").child(user.getUid()).child("phone").setValue(phoneEdit.getText().toString());*/
+        mDatabase.child("user").child(user.getUid()).setValue(t);
     }
 
     @Override
