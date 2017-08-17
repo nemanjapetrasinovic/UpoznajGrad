@@ -49,8 +49,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
 
         btnFindPath = (Button) findViewById(R.id.btnFindPath);
-    //    etOrigin = (EditText) findViewById(R.id.etOrigin);
-    //    etDestination = (EditText) findViewById(R.id.etDestination);
 
         btnFindPath.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,8 +94,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onDirectionFinderStart() {
-        progressDialog = ProgressDialog.show(this, "Please wait.",
-                "Finding direction..!", true);
+        progressDialog = ProgressDialog.show(this, "Molim sačekajte",
+                "Pretraživanje putanje...", true);
 
         if (originMarkers != null) {
             for (Marker marker : originMarkers) {
