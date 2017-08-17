@@ -63,7 +63,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void sendRequest() {
-        String origin = "Bulevar 12. februara, Niš";
+        String origin = "Bulevar 12. februara";
         String destination =getIntent().getStringExtra("spot_header");
 
         try {
@@ -78,9 +78,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
         LatLng hcmus = new LatLng(43.322990, 21.898946);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hcmus, 15));
-        originMarkers.add(mMap.addMarker(new MarkerOptions()
-                .title("NIS")
-                .position(hcmus)));
+       // originMarkers.add(mMap.addMarker(new MarkerOptions()
+        //        .title("NIS")
+        //        .position(hcmus)));
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -88,6 +88,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } else {
             // Show rationale and request permission.
         }
+
+        mMap.setMyLocationEnabled(true);
+
     }
 
 
@@ -152,7 +155,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if (permissions.length == 1 &&
                     permissions[0] == Manifest.permission.ACCESS_FINE_LOCATION &&
                     grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                mMap.setMyLocationEnabled(true);
             } else {
                 // Permission was denied. Display an error message.
             }
