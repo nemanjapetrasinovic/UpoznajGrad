@@ -61,7 +61,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private void sendRequest() {
         String origin = "Bulevar 12. februara, Niš";
-        String destination ="Bulevar Nemanjića, Niš";
+        String destination =getIntent().getStringExtra("spot_header");
 
         try {
             new DirectionFinder(this, origin, destination).execute();

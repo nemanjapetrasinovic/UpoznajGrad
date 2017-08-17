@@ -107,25 +107,8 @@ public class MainActivity extends AppCompatActivity
             startService(new Intent(this,MyService.class));
         }
 
+        linkLayouts();
 
-
-        Button map=(Button) findViewById(R.id.button2);
-        map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent openMap=new Intent(MainActivity.this.getApplicationContext(),MapsActivity.class);
-                startActivity(openMap);
-            }
-        });
-
-        LinearLayout NiskaTvrdjava= (LinearLayout) findViewById(R.id.niska_tvrdjava);
-        NiskaTvrdjava.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
-                startActivity(openInfo);
-            }
-        });
     }
 
     @Override
@@ -284,5 +267,48 @@ public class MainActivity extends AppCompatActivity
                 }
             });
         }
+    }
+
+    private void linkLayouts(){
+        LinearLayout NiskaTvrdjava= (LinearLayout) findViewById(R.id.niska_tvrdjava);
+        NiskaTvrdjava.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
+                openInfo.putExtra("spot","niska_tvrdjava");
+                startActivity(openInfo);
+            }
+        });
+
+        LinearLayout KonstantinVeliki= (LinearLayout) findViewById(R.id.konstantin_veliki);
+        KonstantinVeliki.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
+                openInfo.putExtra("spot","konstantin_veliki");
+                startActivity(openInfo);
+            }
+        });
+
+        LinearLayout Medijana= (LinearLayout) findViewById(R.id.Medijana);
+        Medijana.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
+                openInfo.putExtra("spot","Medijana");
+                startActivity(openInfo);
+            }
+        });
+
+        LinearLayout CeleKula= (LinearLayout) findViewById(R.id.cele_kula);
+        CeleKula.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
+                openInfo.putExtra("spot","cele_kula");
+                startActivity(openInfo);
+            }
+        });
+
     }
 }

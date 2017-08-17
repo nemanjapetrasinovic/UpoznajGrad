@@ -8,9 +8,21 @@
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="map"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:id="@+id/scrollView2"
+        android:layout_width="367dp"
+        android:layout_height="486dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -20,7 +32,9 @@
         android:paddingRight="2pt"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        tools:layout_editor_absoluteY="25dp"
+        tools:layout_editor_absoluteX="9dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,16 +53,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10pt"
-                android:text="Tvrdjava"
                 android:textColor="@color/colorAccent"
-                android:textSize="12pt" />
+                android:textSize="12pt"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="78dp" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="3pt"
-                android:text="@string/niska_tvrdjava" />
+                android:paddingTop="3pt" />
 
             <Button
                 android:id="@+id/button3"
@@ -57,4 +71,5 @@
                 android:text="Započni kviz" />
         </LinearLayout>
     </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
