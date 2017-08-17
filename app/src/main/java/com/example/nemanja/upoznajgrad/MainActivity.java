@@ -2,8 +2,11 @@ package com.example.nemanja.upoznajgrad;
 
 import android.*;
 import android.Manifest;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -51,6 +54,11 @@ public class MainActivity extends AppCompatActivity
     private FirebaseStorage storage;
     private StorageReference storageRef;
     private DatabaseReference mDatabase;
+
+    Intent intentMyService;
+    ComponentName service;
+    BroadcastReceiver receiver;
+    String GPS_FILTER = "com.example.rankovic.mylocationtracker.LOCATION";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +114,15 @@ public class MainActivity extends AppCompatActivity
         if(!runtimePermisions()){
             startService(new Intent(this,MyService.class));
         }
+
+        //Location Service start
+        intentMyService = new Intent(this, MyService.class);
+        service = startService(intentMyService);
+
+        IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
+        receiver = new MyMainLocalReceiver();
+        registerReceiver(receiver, mainFilter);
+        //Location Service end
 
         linkLayouts();
 
@@ -310,5 +327,18 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+    }
+
+    private class MyMainLocalReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            double latitude = intent.getDoubleExtra("latitude", -1);
+            double longitude = intent.getDoubleExtra("longitude", -1);
+            /*EditText lon = (EditText) findViewById(R.id.lon);
+            EditText lat = (EditText) findViewById(R.id.lat);
+            lon.setText(String.valueOf(longitude));
+            lat.setText(String.valueOf(latitude));*/
+            Toast.makeText(getApplicationContext(), String.valueOf(latitude) +  " " + String.valueOf(longitude), Toast.LENGTH_LONG).show();
+        }
     }
 }
