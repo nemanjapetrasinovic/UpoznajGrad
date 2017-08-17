@@ -2,14 +2,22 @@ package com.example.nemanja.upoznajgrad;
 
         import android.Manifest;
         import android.app.ProgressDialog;
+        import android.content.BroadcastReceiver;
+        import android.content.ComponentName;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.content.IntentFilter;
         import android.content.pm.PackageManager;
         import android.graphics.Color;
+        import android.location.Address;
+        import android.location.Geocoder;
         import android.support.v4.app.ActivityCompat;
         import android.support.v4.app.FragmentActivity;
         import android.os.Bundle;
         import android.view.View;
         import android.widget.Button;
         import android.widget.TextView;
+        import android.widget.Toast;
 
         import com.google.android.gms.maps.CameraUpdateFactory;
         import com.google.android.gms.maps.GoogleMap;
@@ -25,6 +33,7 @@ package com.example.nemanja.upoznajgrad;
         import java.io.UnsupportedEncodingException;
         import java.util.ArrayList;
         import java.util.List;
+        import java.util.Locale;
 
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener {
@@ -37,6 +46,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private List<Marker> destinationMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
     private ProgressDialog progressDialog;
+
+    Intent intentMyService;
+    ComponentName service;
+    BroadcastReceiver receiver;
+    String GPS_FILTER = "com.example.nemanja.mylocationtracker.LOCATION";
+    double latitude;
+    double longitude;
     
 
     @Override
@@ -58,10 +74,48 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 sendRequest();
             }
         });
+
+        //Location Service start
+        intentMyService = new Intent(this, MyService.class);
+        service = startService(intentMyService);
+
+        IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
+        receiver = new MapsActivity.MyMainLocalReceiver();
+        registerReceiver(receiver, mainFilter);
+        //Location Service end
     }
 
     private void sendRequest() {
-        String origin = "Bulevar 12. februara";
+
+        Geocoder geocoder;
+        List<Address> addresses;
+        geocoder = new Geocoder(this, Locale.getDefault());
+
+        addresses=null;
+        try {
+            addresses = geocoder.getFromLocation(latitude, longitude, 1);
+        }
+        catch (Exception e){
+
+        }
+
+        String address = null;
+        String city = null;
+        String state = null;
+        String country = null;
+        String postalCode = null;
+        String knownName=null;
+
+        if(addresses!=null) {
+            address = addresses.get(0).getAddressLine(0);
+            city = addresses.get(0).getLocality();
+            state = addresses.get(0).getAdminArea();
+            country = addresses.get(0).getCountryName();
+            postalCode = addresses.get(0).getPostalCode();
+            knownName = addresses.get(0).getFeatureName();
+        }
+
+        String origin = address+" "+city+" "+state;
         String destination =getIntent().getStringExtra("spot_header");
 
         try {
@@ -146,6 +200,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 polylineOptions.add(route.points.get(i));
 
             polylinePaths.add(mMap.addPolyline(polylineOptions));
+        }
+    }
+
+    private class MyMainLocalReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            latitude = intent.getDoubleExtra("latitude", -1);
+            longitude = intent.getDoubleExtra("longitude", -1);
+            Toast.makeText(getApplicationContext(), String.valueOf(latitude) +  " " + String.valueOf(longitude), Toast.LENGTH_LONG).show();
         }
     }
 }

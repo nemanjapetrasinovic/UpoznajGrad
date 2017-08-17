@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity
     Intent intentMyService;
     ComponentName service;
     BroadcastReceiver receiver;
-    String GPS_FILTER = "com.example.rankovic.mylocationtracker.LOCATION";
+    String GPS_FILTER = "com.example.nemanja.mylocationtracker.LOCATION";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
