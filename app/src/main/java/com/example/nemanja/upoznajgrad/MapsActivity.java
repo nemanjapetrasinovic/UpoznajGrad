@@ -58,6 +58,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 sendRequest();
             }
         });
+
+        //noinspection MissingPermission
+        mMap.setMyLocationEnabled(true);
     }
 
     private void sendRequest() {
