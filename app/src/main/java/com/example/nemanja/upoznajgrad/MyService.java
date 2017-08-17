@@ -1,5 +1,6 @@
 package com.example.nemanja.upoznajgrad;
 
+import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.IntDef;
+import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 
 import java.util.List;
@@ -20,6 +22,9 @@ public class MyService extends Service {
     private LocationManager mLocationManager = null;
     private static final int LOCATION_INTERVAL = 1000;
     private static final float LOCATION_DISTANCE = 5f;
+    private int mNotificationId = 001;
+    private NotificationCompat.Builder mBuilder;
+    private NotificationManager mNotifyMgr;
 
     private class LocationListener implements android.location.LocationListener
     {
@@ -51,6 +56,16 @@ public class MyService extends Service {
                     }
                 }
             });
+
+            Location tasklocation=new Location(LocationManager.GPS_PROVIDER);
+            tasklocation.setLatitude(43.665307);
+            tasklocation.setLongitude(20.828688);
+            double dis1 = location.distanceTo(tasklocation);
+
+            if(dis1<200.00){
+                mNotifyMgr.notify(mNotificationId, mBuilder.build());
+                mNotificationId++;
+            }
         }
 
         public void callBroadcastReceiver(){
@@ -122,6 +137,15 @@ public class MyService extends Service {
         } catch (IllegalArgumentException ex) {
             Log.d(TAG, "gps provider does not exist " + ex.getMessage());
         }
+
+        mBuilder =
+                (NotificationCompat.Builder) new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.ic_near_me_white_48px)
+                        .setContentTitle("My notification")
+                        .setContentText("Hello World!");
+        mNotifyMgr =
+                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        mBuilder.setVibrate(new long[] {1000,200,1000,200});
     }
 
     @Override
