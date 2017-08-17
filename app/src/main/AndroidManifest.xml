@@ -52,7 +52,12 @@
         <service
             android:name=".MyService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity
+            android:name=".RangList"
+            android:label="@string/title_activity_rang_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

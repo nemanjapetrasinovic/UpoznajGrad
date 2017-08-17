@@ -37,6 +37,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private List<Marker> destinationMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
     private ProgressDialog progressDialog;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
