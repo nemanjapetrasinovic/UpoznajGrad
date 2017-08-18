@@ -274,7 +274,7 @@ public class MainActivity extends AppCompatActivity
                 public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                     // Local temp file has been created
                     Bitmap myBitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
-                    ImageView image=(ImageView) findViewById(R.id.imageView);
+                    ImageView image=(ImageView) findViewById(R.id.profile_picture);
                     image.setImageBitmap(myBitmap);
                 }
             }).addOnFailureListener(new OnFailureListener() {
