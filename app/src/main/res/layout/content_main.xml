@@ -40,6 +40,7 @@
                     android:id="@+id/niska_tvrdjava"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -78,7 +79,8 @@
                     android:id="@+id/konstantin_veliki"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -117,7 +119,8 @@
                     android:id="@+id/Medijana"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -156,7 +159,8 @@
                     android:id="@+id/cele_kula"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -195,7 +199,8 @@
                     android:id="@+id/latinska_crkva"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -234,7 +239,8 @@
                     android:id="@+id/crkva_sveti_nikola"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -273,7 +279,8 @@
                     android:id="@+id/sinagoga"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -312,7 +319,8 @@
                     android:id="@+id/zgrada_banovine"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -351,7 +359,8 @@
                     android:id="@+id/oficirski_dom"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -390,7 +399,8 @@
                     android:id="@+id/crkva_svetog_pantelejmona"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -403,7 +413,7 @@
                             android:id="@+id/textView33"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.3"
+                            android:layout_weight="1"
                             android:text="10"
                             android:textColor="@color/colorAccent"
                             android:textSize="18pt" />
@@ -412,8 +422,8 @@
                             android:id="@+id/textView34"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.7"
+                            android:layout_gravity="right"
+                            android:layout_weight="1"
                             android:text="Crkva Svetog Pantelejmona"
                             android:textSize="12pt" />
                     </LinearLayout>
@@ -429,7 +439,8 @@
                     android:id="@+id/crkva_svetog_arhangela_mihaila"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -468,7 +479,8 @@
                     android:id="@+id/saborna_crkva_svete_trojice"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -508,7 +520,8 @@
                     android:id="@+id/spomen_kompleks_bubanj"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -548,6 +561,7 @@
                     android:id="@+id/muzej_na_crvenom_krstu"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical"
                     tools:layout_editor_absoluteX="8dp"
@@ -595,6 +609,7 @@
                     android:id="@+id/spomenik_oslobodiocima_nisa"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -633,7 +648,8 @@
                     android:id="@+id/hamam"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -672,7 +688,8 @@
                     android:id="@+id/dzamija_balije_jedrenca"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -711,7 +728,8 @@
                     android:id="@+id/ulica_iz_doba_justinijana_prvog"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -750,7 +768,8 @@
                     android:id="@+id/barutane"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -789,7 +808,8 @@
                     android:id="@+id/letnja_pozornica"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -828,7 +848,8 @@
                     android:id="@+id/ranovizantijska_grobnica"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -867,7 +888,8 @@
                     android:id="@+id/narodno_pozoriste"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -903,10 +925,11 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/crkva_svete_trojice_u_grabovcu"
+                    android:id="@+id/crkva_svete_trojice_u_gabrovcu"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -930,7 +953,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1.7"
-                            android:text="Crkva Svete Trojice u Grabovcu"
+                            android:text="Crkva Svete Trojice u Gabrovcu"
                             android:textSize="12pt" />
                     </LinearLayout>
 
@@ -945,7 +968,8 @@
                     android:id="@+id/spomen_kosturnica"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -984,7 +1008,8 @@
                     android:id="@+id/spomenik_knezu_milanu_obrenovicu"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1023,7 +1048,8 @@
                     android:id="@+id/lapidarijum"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1063,7 +1089,7 @@
                     android:id="@+id/arsenal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1103,7 +1129,8 @@
                     android:id="@+id/objekat_sa_svodovima"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical"
                     tools:layout_editor_absoluteX="8dp"
@@ -1151,6 +1178,7 @@
                     android:id="@+id/palata_sa_oktagonom"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1189,7 +1217,8 @@
                     android:id="@+id/arheoloska_sala"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1228,7 +1257,8 @@
                     android:id="@+id/osnovni_sud_u_nisu"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1267,7 +1297,8 @@
                     android:id="@+id/kazandzijsko_sokace"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1306,7 +1337,8 @@
                     android:id="@+id/gradska_kuca"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1345,7 +1377,8 @@
                     android:id="@+id/zgrada_trgovca_andona_andonovica"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1384,7 +1417,8 @@
                     android:id="@+id/cairska_cesma"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1423,7 +1457,8 @@
                     android:id="@+id/kuca_stambolijskih"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1462,7 +1497,8 @@
                     android:id="@+id/zgrada_glavne_poste"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1501,7 +1537,8 @@
                     android:id="@+id/spomenik_kralju_aleksandru_i_karadjordjevicu"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1540,7 +1577,8 @@
                     android:id="@+id/pasterov_zavod"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1579,7 +1617,8 @@
                     android:id="@+id/srpsko_vojnicko_groblje"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1619,7 +1658,8 @@
                     android:id="@+id/vojno_groblje_britanskog_komonvelta"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1659,7 +1699,8 @@
                     android:id="@+id/spomenik_na_cegru"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical"
                     tools:layout_editor_absoluteX="8dp"
@@ -1707,6 +1748,7 @@
                     android:id="@+id/humska_cuka"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1720,7 +1762,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.3"
-                            android:text="15"
+                            android:text="43"
                             android:textColor="@color/colorAccent"
                             android:textSize="18pt" />
 
@@ -1730,7 +1772,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1.7"
-                            android:text="Spomenik oslobodiocima Niša"
+                            android:text="Humska čuka"
                             android:textSize="12pt" />
                     </LinearLayout>
 
@@ -1745,7 +1787,8 @@
                     android:id="@+id/niska_banja"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1759,7 +1802,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.3"
-                            android:text="16"
+                            android:text="44"
                             android:textColor="@color/colorAccent"
                             android:textSize="18pt" />
 
@@ -1769,7 +1812,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1.7"
-                            android:text="Hamam"
+                            android:text="NIška Banja"
                             android:textSize="12pt" />
                     </LinearLayout>
 
@@ -1784,7 +1827,8 @@
                     android:id="@+id/sicevacka_klisura"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1798,7 +1842,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.3"
-                            android:text="17"
+                            android:text="45"
                             android:textColor="@color/colorAccent"
                             android:textSize="18pt" />
 
@@ -1808,7 +1852,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1.7"
-                            android:text="Džamija Balije Jedrenca"
+                            android:text="Sićevačka klisura"
                             android:textSize="12pt" />
                     </LinearLayout>
 
@@ -1823,7 +1867,8 @@
                     android:id="@+id/crkva_svete_petke_iverica"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1837,7 +1882,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.3"
-                            android:text="18"
+                            android:text="46"
                             android:textColor="@color/colorAccent"
                             android:textSize="18pt" />
 
@@ -1847,7 +1892,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1.7"
-                            android:text="Ulica iz doba Justinijana Prvog"
+                            android:text='Crkva Svete Petke "Iverica"'
                             android:textSize="12pt" />
                     </LinearLayout>
 
@@ -1862,7 +1907,8 @@
                     android:id="@+id/manastir_sveta_bogorodica"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5pt"
+
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
@@ -1876,7 +1922,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.3"
-                            android:text="19"
+                            android:text="47"
                             android:textColor="@color/colorAccent"
                             android:textSize="18pt" />
 
@@ -1886,7 +1932,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1.7"
-                            android:text="Barutane"
+                            android:text="Manastir Sveta Bogorodica"
                             android:textSize="12pt" />
                     </LinearLayout>
 
