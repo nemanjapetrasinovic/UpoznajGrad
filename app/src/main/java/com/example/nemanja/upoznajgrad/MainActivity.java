@@ -168,6 +168,8 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            Intent openRang=new Intent(MainActivity.this.getApplicationContext(),RangList.class);
+            startActivity(openRang);
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
