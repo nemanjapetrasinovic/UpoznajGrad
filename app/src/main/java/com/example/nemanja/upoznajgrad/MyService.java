@@ -60,9 +60,9 @@ public class MyService extends Service {
             Location tasklocation=new Location(LocationManager.GPS_PROVIDER);
             tasklocation.setLatitude(43.665307);
             tasklocation.setLongitude(20.828688);
-            double dis1 = location.distanceTo(tasklocation);
+            double distance = location.distanceTo(tasklocation);
 
-            if(dis1<200.00){
+            if(distance<10.00){
                 mNotifyMgr.notify(mNotificationId, mBuilder.build());
                 mNotificationId++;
             }

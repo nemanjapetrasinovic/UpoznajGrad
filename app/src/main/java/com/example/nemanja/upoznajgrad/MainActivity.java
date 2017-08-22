@@ -172,6 +172,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(openRang);
         } else if (id == R.id.nav_gallery) {
 
+            Intent profile=new Intent(MainActivity.this.getApplicationContext(),ProfileActivity.class);
+            startActivity(profile);
+
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {

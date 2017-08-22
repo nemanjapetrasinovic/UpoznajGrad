@@ -2,14 +2,24 @@ package com.example.nemanja.upoznajgrad;
 
         import android.Manifest;
         import android.app.ProgressDialog;
+        import android.content.BroadcastReceiver;
+        import android.content.ComponentName;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.content.IntentFilter;
         import android.content.pm.PackageManager;
         import android.graphics.Color;
+        import android.location.Address;
+        import android.location.Geocoder;
+        import android.os.AsyncTask;
+        import android.support.annotation.NonNull;
         import android.support.v4.app.ActivityCompat;
         import android.support.v4.app.FragmentActivity;
         import android.os.Bundle;
         import android.view.View;
         import android.widget.Button;
         import android.widget.TextView;
+        import android.widget.Toast;
 
         import com.google.android.gms.maps.CameraUpdateFactory;
         import com.google.android.gms.maps.GoogleMap;
@@ -22,9 +32,19 @@ package com.example.nemanja.upoznajgrad;
         import com.google.android.gms.maps.model.Polyline;
         import com.google.android.gms.maps.model.PolylineOptions;
 
+        import java.io.BufferedInputStream;
+        import java.io.InputStream;
+        import java.io.InputStreamReader;
         import java.io.UnsupportedEncodingException;
+        import java.net.HttpURLConnection;
+        import java.net.URI;
+        import java.net.URL;
         import java.util.ArrayList;
+        import java.util.Collection;
+        import java.util.Iterator;
         import java.util.List;
+        import java.util.ListIterator;
+        import java.util.Locale;
 
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener {
@@ -37,7 +57,77 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private List<Marker> destinationMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
     private ProgressDialog progressDialog;
-    
+    private double latitude;
+    private double longitude;
+
+    private String test;
+
+    BroadcastReceiver receiver;
+    String GPS_FILTER = "com.example.nemanja.mylocationtracker.LOCATION";
+
+    private class MyMainLocalReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            latitude = intent.getDoubleExtra("latitude", -1);
+            longitude = intent.getDoubleExtra("longitude", -1);
+            /*EditText lon = (EditText) findViewById(R.id.lon);
+            EditText lat = (EditText) findViewById(R.id.lat);
+            lon.setText(String.valueOf(longitude));
+            lat.setText(String.valueOf(latitude));*/
+            Toast.makeText(getApplicationContext(), "Maps"+ String.valueOf(latitude) +  " " + String.valueOf(longitude), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private class GetAddressTask extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+            HttpURLConnection urlConnection=null;
+            int data=0;
+            try {
+                URL url = new URL("https://maps.googleapis.com/maps/api/geocode/json?latlng=43.334265,21.911509&key=AIzaSyBJHMfnjCTAGjBTkyYWiu0TK1_KxX7r7OE");
+                urlConnection = (HttpURLConnection) url
+                        .openConnection();
+
+                InputStream in = urlConnection.getInputStream();
+
+                InputStreamReader isw = new InputStreamReader(in);
+
+                data = isw.read();
+                while (data != -1) {
+                    char current = (char) data;
+                    data = isw.read();
+                    System.out.print(current);
+                }
+                return "123";
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+                return "123";
+            }
+            finally {
+                if (urlConnection != null) {
+                    urlConnection.disconnect();
+                }
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            GetAddressFunction(result);
+        }
+
+        @Override
+        protected void onPreExecute() {}
+
+        @Override
+        protected void onProgressUpdate(Void... values) {}
+    }
+
+    private void GetAddressFunction(String value){
+        test=value;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,16 +146,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 sendRequest();
             }
         });
+
+        IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
+        receiver = new MyMainLocalReceiver();
+        registerReceiver(receiver, mainFilter);
     }
 
     private void sendRequest() {
-        String origin = "Bulevar 12. februara, Niš";
-        String destination =getIntent().getStringExtra("spot_header");
+        if(latitude!=0 && longitude!=0) {
+            GetAddressTask ga=new GetAddressTask();
+            String origin= String.valueOf(ga.execute(null,null,null));
+            String destination =getIntent().getStringExtra("spot_header");
 
-        try {
-            new DirectionFinder(this, origin, destination).execute();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            String s=test;
+            String s1=s;
+            try {
+                new DirectionFinder(this, origin, destination).execute();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -146,4 +245,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             polylinePaths.add(mMap.addPolyline(polylineOptions));
         }
     }
+
 }
+
