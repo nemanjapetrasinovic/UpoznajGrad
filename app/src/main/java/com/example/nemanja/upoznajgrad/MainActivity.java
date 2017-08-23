@@ -125,7 +125,6 @@ public class MainActivity extends AppCompatActivity
         //Location Service end
 
         linkLayouts();
-
     }
 
     @Override
@@ -181,7 +180,11 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
+            startService(new Intent(MainActivity.this.getApplicationContext(), MyService.class));
+
         } else if (id == R.id.nav_send) {
+
+            stopService(new Intent(MainActivity.this.getApplicationContext(), MyService.class));
 
         }
 
