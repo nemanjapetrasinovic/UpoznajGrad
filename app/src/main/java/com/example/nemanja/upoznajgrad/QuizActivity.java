@@ -3,6 +3,7 @@ package com.example.nemanja.upoznajgrad;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,19 +13,27 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.example.nemanja.upoznajgrad.R.*;
 
 public class QuizActivity extends AppCompatActivity {
 
     DatabaseReference dref;
     String ID;
-    TextView question1 = (TextView)findViewById(R.id.textView4);
+    TextView question1,question2,question3,question4;
+    ArrayList<Question> list=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
+        setContentView(layout.activity_quiz);
 
-        Button submitAnswers = (Button) findViewById(R.id.button4);
+        Button submitAnswers = (Button) findViewById(id.button4);
         submitAnswers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,40 +43,32 @@ public class QuizActivity extends AppCompatActivity {
         });
 
 
-
-
        // dref= FirebaseDatabase.getInstance().getReference("question/" + ID);
         dref= FirebaseDatabase.getInstance().getReference("question/Medijana");
-
-        dref.addChildEventListener(new ChildEventListener() {
+        dref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Question question = dataSnapshot.getValue(Question.class);
-                question1.setText("");
-
-
+            public void onDataChange(DataSnapshot snapshot) {
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    Question q = postSnapshot.getValue(Question.class);
+                    list.add(q);
+                }
+                question1=(TextView)findViewById(id.textView4);
+                question1.setText(list.get(0).getTekst());
+                question2=(TextView)findViewById(id.textView8);
+             //   question2.setText(list.get(1).getTekst());
+              //  question3=(TextView)findViewById(id.textView10);
+              //  question3.setText(list.get(2).getTekst());
+               // question4=(TextView)findViewById(id.textView12);
+                //question4.setText(list.get(3).getTekst());
             }
 
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
-            }
+                    @Override
+                    public void onCancelled(DatabaseError firebaseError) {
+                        Log.e("The read failed: " ,firebaseError.getMessage());
+                    }
+                });
 
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
 
     }
 }

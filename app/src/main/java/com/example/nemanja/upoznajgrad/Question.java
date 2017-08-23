@@ -9,14 +9,14 @@ import java.util.List;
 public class Question {
     String tip;
     String tekst;
-    List<String> ponudjeniOdgovori;
-    List<String> tacniOdgovori;
+    String ponudjeniOdgovori;
+    String tacniOdgovori;
 
-    public void setTacniOdgovori(List<String> tacniOdgovori) {
+    public void setTacniOdgovori(String tacniOdgovori) {
         this.tacniOdgovori = tacniOdgovori;
     }
 
-    public void setPonudjeniOdgovori(List<String> ponudjeniOdgovori) {
+    public void setPonudjeniOdgovori(String ponudjeniOdgovori) {
 
         this.ponudjeniOdgovori = ponudjeniOdgovori;
     }
@@ -31,7 +31,7 @@ public class Question {
         this.tip = tip;
     }
 
-    public List<String> getTacniOdgovori() {
+    public String getTacniOdgovori() {
 
         return tacniOdgovori;
     }
@@ -41,7 +41,7 @@ public class Question {
         return tekst;
     }
 
-    public List<String> getPonudjeniOdgovori() {
+    public String getPonudjeniOdgovori() {
 
         return ponudjeniOdgovori;
     }
