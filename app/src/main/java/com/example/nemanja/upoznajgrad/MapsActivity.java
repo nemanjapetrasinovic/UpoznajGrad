@@ -1,6 +1,6 @@
 package com.example.nemanja.upoznajgrad;
 
-        import android.Manifest;
+import android.Manifest;
         import android.app.ProgressDialog;
         import android.content.BroadcastReceiver;
         import android.content.ComponentName;
@@ -16,6 +16,7 @@ package com.example.nemanja.upoznajgrad;
         import android.support.v4.app.ActivityCompat;
         import android.support.v4.app.FragmentActivity;
         import android.os.Bundle;
+        import android.util.Log;
         import android.view.View;
         import android.widget.Button;
         import android.widget.TextView;
@@ -31,12 +32,26 @@ package com.example.nemanja.upoznajgrad;
         import com.google.android.gms.maps.model.MarkerOptions;
         import com.google.android.gms.maps.model.Polyline;
         import com.google.android.gms.maps.model.PolylineOptions;
+        import com.google.firebase.auth.FirebaseAuth;
+        import com.google.firebase.auth.FirebaseUser;
+        import com.google.firebase.database.DataSnapshot;
+        import com.google.firebase.database.DatabaseError;
+        import com.google.firebase.database.DatabaseReference;
+        import com.google.firebase.database.FirebaseDatabase;
+        import com.google.firebase.database.ValueEventListener;
+        import com.google.firebase.storage.FirebaseStorage;
+        import com.google.firebase.storage.StorageReference;
+
+        import org.json.JSONException;
 
         import java.io.BufferedInputStream;
+        import java.io.BufferedReader;
+        import java.io.IOException;
         import java.io.InputStream;
         import java.io.InputStreamReader;
         import java.io.UnsupportedEncodingException;
         import java.net.HttpURLConnection;
+        import java.net.MalformedURLException;
         import java.net.URI;
         import java.net.URL;
         import java.util.ArrayList;
@@ -45,6 +60,7 @@ package com.example.nemanja.upoznajgrad;
         import java.util.List;
         import java.util.ListIterator;
         import java.util.Locale;
+        import java.util.concurrent.Callable;
 
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener {
@@ -59,6 +75,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private ProgressDialog progressDialog;
     private double latitude;
     private double longitude;
+
+    private double dlatitude;
+    private double dlongitude;
+
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     private String test;
 
@@ -76,56 +97,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             lat.setText(String.valueOf(latitude));*/
             Toast.makeText(getApplicationContext(), "Maps"+ String.valueOf(latitude) +  " " + String.valueOf(longitude), Toast.LENGTH_LONG).show();
         }
-    }
-
-    private class GetAddressTask extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected String doInBackground(String... params) {
-            HttpURLConnection urlConnection=null;
-            int data=0;
-            try {
-                URL url = new URL("https://maps.googleapis.com/maps/api/geocode/json?latlng=43.334265,21.911509&key=AIzaSyBJHMfnjCTAGjBTkyYWiu0TK1_KxX7r7OE");
-                urlConnection = (HttpURLConnection) url
-                        .openConnection();
-
-                InputStream in = urlConnection.getInputStream();
-
-                InputStreamReader isw = new InputStreamReader(in);
-
-                data = isw.read();
-                while (data != -1) {
-                    char current = (char) data;
-                    data = isw.read();
-                    System.out.print(current);
-                }
-                return "123";
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-                return "123";
-            }
-            finally {
-                if (urlConnection != null) {
-                    urlConnection.disconnect();
-                }
-            }
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            GetAddressFunction(result);
-        }
-
-        @Override
-        protected void onPreExecute() {}
-
-        @Override
-        protected void onProgressUpdate(Void... values) {}
-    }
-
-    private void GetAddressFunction(String value){
-        test=value;
     }
 
 
@@ -154,12 +125,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private void sendRequest() {
         if(latitude!=0 && longitude!=0) {
-            GetAddressTask ga=new GetAddressTask();
-            String origin= String.valueOf(ga.execute(null,null,null));
-            String destination =getIntent().getStringExtra("spot_header");
 
-            String s=test;
-            String s1=s;
+            Intent i=getIntent();
+            dlatitude=Double.parseDouble(getIntent().getStringExtra("latitude"));
+            dlongitude=Double.parseDouble(getIntent().getStringExtra("longitude"));
+
+            String origin= Double.toString(latitude)+","+Double.toString(longitude);
+            String destination =Double.toString(dlatitude)+","+Double.toString(dlongitude);
+
             try {
                 new DirectionFinder(this, origin, destination).execute();
             } catch (UnsupportedEncodingException e) {

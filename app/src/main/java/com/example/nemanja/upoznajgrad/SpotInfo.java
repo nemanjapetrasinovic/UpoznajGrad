@@ -65,7 +65,8 @@ public class SpotInfo extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent openMap=new Intent(SpotInfo.this.getApplicationContext(),MapsActivity.class);
-                        openMap.putExtra("spot_header",s.getHeader());
+                        openMap.putExtra("latitude",Double.toString(s.getLatitude()));
+                        openMap.putExtra("longitude",Double.toString(s.getLongitude()));
                         startActivity(openMap);
                     }
                 });
