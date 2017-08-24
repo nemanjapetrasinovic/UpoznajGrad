@@ -10,7 +10,7 @@ class Korisnik {
     public String firstname;
     public String lastname;
     public String phonenumber;
-    public int score;
+    public String score;
     public List<String> friends;
     public String picture;
     public float latitude;
@@ -29,7 +29,7 @@ class Korisnik {
         return phonenumber;
     }
 
-    public int getScore() {
+    public String getScore() {
         return score;
     }
 
@@ -53,7 +53,7 @@ class Korisnik {
         this.phonenumber = phonenumber;
     }
 
-    public void setScore(int score) {
+    public void setScore(String score) {
         this.score = score;
     }
 
