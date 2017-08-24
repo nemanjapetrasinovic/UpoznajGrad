@@ -12,14 +12,7 @@ public class Question {
     String ponudjeniOdgovori;
     String tacniOdgovori;
 
-    public void setTacniOdgovori(String tacniOdgovori) {
-        this.tacniOdgovori = tacniOdgovori;
-    }
 
-    public void setPonudjeniOdgovori(String ponudjeniOdgovori) {
-
-        this.ponudjeniOdgovori = ponudjeniOdgovori;
-    }
 
     public void setTekst(String tekst) {
 
@@ -31,14 +24,24 @@ public class Question {
         this.tip = tip;
     }
 
-    public String getTacniOdgovori() {
-
-        return tacniOdgovori;
-    }
 
     public String getTekst() {
 
         return tekst;
+    }
+
+    public void setTacniOdgovori(String tacniOdgovori) {
+        this.tacniOdgovori = tacniOdgovori;
+    }
+
+    public void setPonudjeniOdgovori(String ponudjeniOdgovori) {
+
+        this.ponudjeniOdgovori = ponudjeniOdgovori;
+    }
+
+    public String getTacniOdgovori() {
+
+        return tacniOdgovori;
     }
 
     public String getPonudjeniOdgovori() {
