@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 public class SpotInfo extends AppCompatActivity {
 
     ProgressDialog progressDialog;
+    String spotID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +34,7 @@ public class SpotInfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent quiz=new Intent(SpotInfo.this.getApplicationContext(),QuizActivity.class);
-                quiz.putExtra("spot","niska_tvrdjava");
+                quiz.putExtra("spot",spotID);
                 startActivity(quiz);
             }
         });
@@ -43,7 +44,7 @@ public class SpotInfo extends AppCompatActivity {
         TextView Header = (TextView) findViewById(R.id.textView2);
         TextView Description = (TextView) findViewById(R.id.textView3);
 
-        String spotID=getIntent().getStringExtra("spot");
+       spotID=getIntent().getStringExtra("spot");
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("spot"+"/"+spotID);
