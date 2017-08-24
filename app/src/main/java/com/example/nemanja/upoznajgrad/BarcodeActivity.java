@@ -103,6 +103,7 @@ public class BarcodeActivity extends AppCompatActivity {
                     });
 
                     Intent openQuiz=new Intent(BarcodeActivity.this.getApplicationContext(),QuizActivity.class);
+                    openQuiz.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     openQuiz.putExtra("spot",barcodes.valueAt(0).displayValue);
                     startActivity(openQuiz);
                 }

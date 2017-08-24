@@ -89,8 +89,13 @@ public class QuizActivity extends AppCompatActivity {
 
     void takeAnswers()
     {
-        TextView pom2=(TextView)findViewById(id.odgovor2);
-        TextView pom4=(TextView)findViewById(id.odgovor4);
+        odgovor3="";
+        odgovor1="";
+        odgovor2="";
+        odgovor4="";
+
+        TextView pom2=(TextView)findViewById(R.id.odgovor2);
+        TextView pom4=(TextView)findViewById(R.id.odgovor4);
 
         if(odg11.isChecked())
             odgovor1=odg11.getText().toString();
@@ -106,7 +111,6 @@ public class QuizActivity extends AppCompatActivity {
         odgovor2 = pom2.getText().toString();
         odgovor4 = pom4.getText().toString();
 
-        odgovor3="";
 
         if(odg31.isChecked())
             odgovor3=odgovor3+","+odg31.getText().toString();

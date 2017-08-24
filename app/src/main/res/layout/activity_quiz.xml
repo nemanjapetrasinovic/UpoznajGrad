@@ -91,6 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
 
+                android:layout_marginTop="10dp"
                 android:background="@drawable/layout_border"
                 android:orientation="vertical">
 
@@ -132,6 +133,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
 
+                android:layout_marginTop="10dp"
                 android:background="@drawable/layout_border"
                 android:orientation="vertical">
 
@@ -203,6 +205,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
 
+                android:layout_marginTop="10dp"
                 android:background="@drawable/layout_border"
                 android:orientation="vertical">
 
@@ -246,6 +249,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
 
+                android:layout_marginTop="10dp"
                 android:background="@drawable/layout_border"
                 android:orientation="vertical">
 
@@ -311,6 +315,7 @@
                 android:id="@+id/button4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="Završeno sa odgovaranjem" />
 
         </LinearLayout>
