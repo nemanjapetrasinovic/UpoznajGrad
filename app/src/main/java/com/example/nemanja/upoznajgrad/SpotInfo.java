@@ -32,7 +32,7 @@ public class SpotInfo extends AppCompatActivity {
         StartQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent quiz=new Intent(SpotInfo.this.getApplicationContext(),QuizActivity.class);
+                Intent quiz=new Intent(SpotInfo.this.getApplicationContext(),BarcodeActivity.class);
                 quiz.putExtra("spot","niska_tvrdjava");
                 startActivity(quiz);
             }

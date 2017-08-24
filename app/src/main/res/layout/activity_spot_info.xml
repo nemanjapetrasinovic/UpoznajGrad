@@ -64,11 +64,20 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="3pt" />
 
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="3pt"
+                android:textSize="6pt"
+                android:textColor="@color/colorAccent"
+                android:text="*Skenirajte QR kod kako bi ste pristupili kvizu." />
+
             <Button
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Započni kviz" />
+                android:text="Skeniraj QR kod" />
         </LinearLayout>
     </ScrollView>
 
