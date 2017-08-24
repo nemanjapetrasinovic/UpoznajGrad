@@ -26,8 +26,8 @@ public class QuizActivity extends AppCompatActivity {
 
     DatabaseReference dref;
     String ID;
-    TextView question1,question2,question3,question4;
-    ArrayList<Question> list=new ArrayList<Question>();
+    TextView question1;
+    final List<Question> list=new ArrayList<Question>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,23 +56,24 @@ public class QuizActivity extends AppCompatActivity {
                     Question q = gson.fromJson(json,Question.class);
                     list.add(q);
                 }
-                question1=(TextView)findViewById(id.textView4);
-                question1.setText(list.get(0).getTekst());
-                question2=(TextView)findViewById(id.textView8);
-             //   question2.setText(list.get(1).getTekst());
-              //  question3=(TextView)findViewById(id.textView10);
-              //  question3.setText(list.get(2).getTekst());
-               // question4=(TextView)findViewById(id.textView12);
-                //question4.setText(list.get(3).getTekst());
+
+                onListLoaded(list);
+
+                Log.e("The read failed: " ,"");
             }
 
 
-                    @Override
-                    public void onCancelled(DatabaseError firebaseError) {
-                        Log.e("The read failed: " ,firebaseError.getMessage());
-                    }
-                });
+            @Override
+            public void onCancelled(DatabaseError firebaseError) {
+                Log.e("The read failed: " ,firebaseError.getMessage());
+            }
+        });
 
+    }
+
+    public void onListLoaded(List<Question> list)
+    {
+        question1.setText(list.get(0).getTekst());
 
     }
 }
