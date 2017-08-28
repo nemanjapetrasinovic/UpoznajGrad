@@ -104,50 +104,43 @@ public class BarcodeActivity extends AppCompatActivity {
 
                     Intent openQuiz=new Intent(BarcodeActivity.this.getApplicationContext(),QuizActivity.class);
                     openQuiz.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    openQuiz.putExtra("spot",barcodes.valueAt(0).displayValue);
+                    if(decodeString(barcodes.valueAt(0).displayValue).toLowerCase().equals("medijana"))
+                        openQuiz.putExtra("spot","Medijana");
+                    openQuiz.putExtra("spot",decodeString(barcodes.valueAt(0).displayValue).toLowerCase());
                     startActivity(openQuiz);
                 }
             }
         });
     }
 
-   /* private boolean runtimePermisions(){
-        if(Build.VERSION.SDK_INT>=23 && ContextCompat.checkSelfPermission(
-                this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
-        {
-            requestPermissions(new String[]{Manifest.permission.CAMERA},200);
-            return true;
+    public static String decodeString(String input){
+        char c;
+        byte b;
+        String binarydecodedInput="";
+        String decodedInput="";
+
+        for(int i=0;i<input.length();i++){
+            c=input.charAt(i);
+            String s = Integer.toBinaryString(c);
+            while (s.length()<8)
+                s='0'+s;
+            binarydecodedInput+=s;
         }
-        return false;
+
+        int remainder= Integer.parseInt(binarydecodedInput.substring(0,8),2);
+        binarydecodedInput=binarydecodedInput.substring(0,binarydecodedInput.length()-(remainder-1));
+        binarydecodedInput=binarydecodedInput.substring(8);
+
+
+        while(binarydecodedInput.length()!=0){
+            String s=binarydecodedInput.substring(0,6);
+            s="01"+s;
+            decodedInput+=String.valueOf((char)Integer.parseInt(s,2));
+            binarydecodedInput=binarydecodedInput.substring(6);
+        }
+
+
+        return decodedInput;
     }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        if(requestCode==200){
-            if(grantResults[0]==PackageManager.PERMISSION_GRANTED)
-            {
-                Context context = getApplicationContext();
-                CharSequence text = "Super";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            }
-            else
-            {
-                Context context = getApplicationContext();
-                CharSequence text = "O ne! Da bi aplikacija funkcionisla potrebno je da omogućite Kameru";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-                runtimePermisions();
-            }
-
-
-        }
-    }*/
 
 }

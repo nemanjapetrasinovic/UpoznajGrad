@@ -792,4 +792,6 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(getApplicationContext(), String.valueOf(latitude) +  " " + String.valueOf(longitude), Toast.LENGTH_LONG).show();
         }
     }
+
+
 }

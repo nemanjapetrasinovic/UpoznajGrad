@@ -144,7 +144,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng hcmus = new LatLng(43.322990, 21.898946);
+        dlatitude=Double.parseDouble(getIntent().getStringExtra("latitude"));
+        dlongitude=Double.parseDouble(getIntent().getStringExtra("longitude"));
+        LatLng hcmus = new LatLng(dlatitude, dlongitude);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hcmus, 15));
         originMarkers.add(mMap.addMarker(new MarkerOptions()
                 .title("NIS")
