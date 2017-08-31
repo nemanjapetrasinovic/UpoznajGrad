@@ -200,7 +200,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         for (Route route : routes) {
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(route.startLocation, 16));
             //((TextView) findViewById(R.id.tvDuration)).setText(route.duration.text);
-            ((TextView) findViewById(R.id.tvDistance)).setText(route.distance.text);
+            ((TextView) findViewById(R.id.tvDistance)).setText("Destinacija je udaljena "+route.distance.text+"km");
 
             originMarkers.add(mMap.addMarker(new MarkerOptions()
                     .title(route.startAddress)

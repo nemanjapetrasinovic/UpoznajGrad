@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,10 +42,18 @@ public class QuizResultsActivity extends AppCompatActivity {
         netacni=(TextView) findViewById(R.id.netacni);
         netacni.setText(wrong);
 
+        Button gotovo=(Button) findViewById(R.id.button2);
+        gotovo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
 
         user = FirebaseAuth.getInstance().getCurrentUser();
 
-final Gson gson=new Gson();
+        final Gson gson=new Gson();
         dref=FirebaseDatabase.getInstance().getReference("user/"+ user.getUid()+"/score");
 
         dref.addListenerForSingleValueEvent(new ValueEventListener() {

@@ -183,11 +183,11 @@ public class MainActivity extends AppCompatActivity
             Intent profile=new Intent(MainActivity.this.getApplicationContext(),ProfileActivity.class);
             startActivity(profile);
 
-        } else if (id == R.id.nav_slideshow) {
+        } /*else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
 
-        } else if (id == R.id.nav_share) {
+        }*/ else if (id == R.id.nav_share) {
 
             startService(new Intent(MainActivity.this.getApplicationContext(), MyService.class));
 
