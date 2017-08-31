@@ -11,11 +11,23 @@ class Korisnik {
     public String lastname;
     public String phonenumber;
     public Integer score;
-    public List<String> friends;
-    public String picture;
+  //  public List<String> friends;
+  //  public String picture;
     public float latitude;
     public float longitude;
     public String email;
+    public String places;
+
+
+    public void setPlaces(String places) {
+        this.places = places;
+    }
+
+    public String getPlaces() {
+
+        return places;
+    }
+
 
     public String getFirstname() {
         return firstname;
@@ -33,13 +45,13 @@ class Korisnik {
         return score;
     }
 
-    public List<String> getFriends() {
-        return friends;
-    }
+//    public List<String> getFriends() {
+//        return friends;
+//    }
 
-    public String getPicture() {
-        return picture;
-    }
+ //   public String getPicture() {
+ //       return picture;
+ //   }
 
     public void setFirstname(String firstname) {
         this.firstname = firstname;
@@ -57,17 +69,17 @@ class Korisnik {
         this.score = score;
     }
 
-    public void setFriends(List<String> friends) {
-        this.friends = friends;
-    }
+ //   public void setFriends(List<String> friends) {
+ //       this.friends = friends;
+//    }
 
-    public void addFriend(String friend){
-        this.friends.add(friend);
-    }
+//    public void addFriend(String friend){
+//        this.friends.add(friend);
+//    }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
-    }
+ //   public void setPicture(String picture) {
+//        this.picture = picture;
+//    }
     public float getLatitude() {
         return latitude;
     }

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,11 +29,13 @@ public class QuizResultsActivity extends AppCompatActivity {
     DatabaseReference dref;
     FirebaseUser user;
     String correct,wrong;
+    String ID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_results);
 
+        ID= getIntent().getStringExtra("id");
         correct= getIntent().getStringExtra("brojTacnih");
         wrong= String.valueOf(3-Integer.parseInt(correct));
 
@@ -54,20 +57,23 @@ public class QuizResultsActivity extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
 
         final Gson gson=new Gson();
-        dref=FirebaseDatabase.getInstance().getReference("user/"+ user.getUid()+"/score");
+        dref=FirebaseDatabase.getInstance().getReference().child("user").child(user.getUid());
 
         dref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
+                Korisnik k=dataSnapshot.getValue(Korisnik.class);
+                k.setScore(k.getScore()+Integer.parseInt(correct));
 
-                Object oldPoints= dataSnapshot.getValue();
-                String json=gson.toJson(oldPoints);
-                Integer p=gson.fromJson(json,Integer.class);
+                if(k.getPlaces().equals(""))
+                    k.setPlaces(ID);
+                else if(k.getPlaces().indexOf(ID)==-1)
+                    k.setPlaces(k.getPlaces()+","+ID);
 
-                Integer points=p+Integer.parseInt(correct);
+                dref.setValue(k);
 
-                dref.setValue(points);
+                addAdvards(k);
 
             }
 
@@ -77,6 +83,28 @@ public class QuizResultsActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+    void addAdvards(Korisnik k)
+    {
+        String s=k.getPlaces();
+        Integer poeni=k.getScore();
+
+        if(poeni/47.0>=1.5 && poeni/47.0<2.0)
+            Toast.makeText(this, "Dobili ste bronzanu znacku", Toast.LENGTH_SHORT).show();
+        else if(poeni/47.0>=2 && poeni/47.0<2.5)
+            Toast.makeText(this, "Dobili ste serbrnu znacku", Toast.LENGTH_SHORT).show();
+        else if(poeni/47>=2.5)
+            Toast.makeText(this, "Dobili ste zlatnu znacku", Toast.LENGTH_SHORT).show();
+
+        String brojMesta, preostalaMesta;
+
+        String [] posecenaMesta=k.getPlaces().split(",");
+
+        brojMesta=Integer.toString(posecenaMesta.length);
+        preostalaMesta=Integer.toString(47-posecenaMesta.length);
+
+        Toast.makeText(this, "Obisli ste "+brojMesta+" mesta, ostalo vam je jos "+preostalaMesta, Toast.LENGTH_SHORT).show();
 
     }
 }

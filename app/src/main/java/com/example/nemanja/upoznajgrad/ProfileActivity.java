@@ -62,7 +62,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
-        final Gson gson=new Gson();
 
         if(user!=null) {
 
@@ -72,11 +71,7 @@ public class ProfileActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(final DataSnapshot dataSnapshot) {
 
-                    Object k= dataSnapshot.getValue();
-                    String json=gson.toJson(k);
-                    Korisnik t=gson.fromJson(json,Korisnik.class);
-
-                    //Korisnik t=dataSnapshot.getValue(Korisnik.class);
+                    Korisnik t=dataSnapshot.getValue(Korisnik.class);
 
                     TextView Name=(TextView) findViewById(R.id.textViewName);
                     Name.setText(t.getFirstname());

@@ -84,6 +84,7 @@ public class QuizActivity extends AppCompatActivity {
 
                 Intent QuizResults =new Intent(QuizActivity.this.getApplicationContext(),QuizResultsActivity.class);
                 QuizResults.putExtra("brojTacnih",brTacnih.toString());
+                QuizResults.putExtra("id",ID);
                 startActivity(QuizResults);
 
 
