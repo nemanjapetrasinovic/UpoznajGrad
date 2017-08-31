@@ -63,9 +63,9 @@ public class QuizResultsActivity extends AppCompatActivity {
 
                 Object oldPoints= dataSnapshot.getValue();
                 String json=gson.toJson(oldPoints);
-                String p=gson.fromJson(json,String.class);
+                Integer p=gson.fromJson(json,Integer.class);
 
-                String points=String.valueOf(Integer.parseInt(p)+Integer.parseInt(correct));
+                Integer points=p+Integer.parseInt(correct);
 
                 dref.setValue(points);
 
