@@ -12,10 +12,13 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -227,6 +230,12 @@ public class RegisterActivity extends AppCompatActivity {
             selectedImage = data.getData();
             String[] filePathColumn = { MediaStore.Images.Media.DATA };
             ImageView imageView = (ImageView) findViewById(R.id.imageView);
+
+            int width = 800;
+            int height = 600;
+            LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,height);
+            parms.gravity= Gravity.CENTER_HORIZONTAL;
+            imageView.setLayoutParams(parms);
             imageView.setImageURI(selectedImage);
 
         }
