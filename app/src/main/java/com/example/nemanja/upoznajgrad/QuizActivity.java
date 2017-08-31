@@ -97,10 +97,8 @@ public class QuizActivity extends AppCompatActivity {
         odgovor3="";
         odgovor1="";
         odgovor2="";
-        odgovor4="";
 
         TextView pom2=(TextView)findViewById(R.id.odgovor2);
-        TextView pom4=(TextView)findViewById(R.id.odgovor4);
 
         if(odg11.isChecked())
             odgovor1=odg11.getText().toString();
@@ -114,7 +112,7 @@ public class QuizActivity extends AppCompatActivity {
             odgovor1="";
 
         odgovor2 = pom2.getText().toString();
-        odgovor4 = pom4.getText().toString();
+
 
 
         if(odg31.isChecked())
