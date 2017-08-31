@@ -111,18 +111,9 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                         }
 
-                        // ...
                     }
                 });
 
-        Button map=(Button) findViewById(R.id.button2);
-        map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent openMain=new Intent(LoginActivity.this.getApplicationContext(),MainActivity.class);
-                startActivity(openMain);
-            }
-        });
 
     }
 }
