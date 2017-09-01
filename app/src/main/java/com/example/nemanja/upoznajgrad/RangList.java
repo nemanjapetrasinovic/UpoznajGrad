@@ -40,14 +40,13 @@ public class RangList extends AppCompatActivity {
         listview=(ListView)findViewById(R.id.listview);
         adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_activated_1,list);
         listview.setAdapter(adapter);
+
         dref=FirebaseDatabase.getInstance().getReference("user");
         dref.orderByChild("score").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-                Object korisnik= dataSnapshot.getValue();
-                String json=gson.toJson(korisnik);
-                Korisnik p=gson.fromJson(json,Korisnik.class);
+                Korisnik p=dataSnapshot.getValue(Korisnik.class);
 
                 String value=String.valueOf(p.getFirstname()+" "+p.getLastname()+" "+p.getScore());
 
