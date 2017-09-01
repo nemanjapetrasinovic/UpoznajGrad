@@ -69,7 +69,7 @@ public class QuizActivity extends AppCompatActivity {
                //     brTacnih++;
 
                 String [] datiOdgovori3=odgovor3.split(",");
-                String [] tacniOdgovori3=odgovor3.split(",");
+                String [] tacniOdgovori3=tacanOdg3.split("\\,");
 
                 int pom=0;
                 if(datiOdgovori3.length==tacniOdgovori3.length) {
@@ -124,10 +124,12 @@ public class QuizActivity extends AppCompatActivity {
             odgovor3=odgovor3+","+odg33.getText().toString();
         else if(odg34.isChecked())
             odgovor3=odgovor3+","+odg34.getText().toString();
+        else
+            odgovor3="";
 
-        odgovor3 = odgovor3.substring(1, odgovor3.length()-1);
+        if(!odgovor3.equals(""))
+            odgovor3 = odgovor3.substring(1, odgovor3.length()-1);
 
-        String s="";
 
     }
     void setQuestion()
