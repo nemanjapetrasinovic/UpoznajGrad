@@ -8,15 +8,18 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +43,8 @@ import com.google.gson.Gson;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ProfileActivity extends AppCompatActivity {
@@ -51,6 +55,8 @@ public class ProfileActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseStorage storage;
     private StorageReference storageRef;
+
+    private ListView visitedPlaces;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +87,8 @@ public class ProfileActivity extends AppCompatActivity {
                     Email.setText(t.getEmail());
                     TextView PhoneNumber=(TextView) findViewById(R.id.textViewPhone);
                     PhoneNumber.setText(t.getPhonenumber());
+                    TextView Points=(TextView) findViewById(R.id.textViewPoints);
+                    Points.setText(String.valueOf(t.getScore()));
 
                     // ZA UCITAVANJE SLIKE U IMAGE_VIEW
 
@@ -111,7 +119,7 @@ public class ProfileActivity extends AppCompatActivity {
                             int width = 800;
                             int height = 600;
                             LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(width,height);
-                            //parms.gravity= Gravity.CENTER_HORIZONTAL;
+                            parms.gravity= Gravity.CENTER_HORIZONTAL;
                             image.setLayoutParams(parms);
 
                             image.setImageBitmap(myBitmap);
@@ -133,6 +141,26 @@ public class ProfileActivity extends AppCompatActivity {
                 }
             });
         }
+
+        visitedPlaces=(ListView) findViewById(R.id.visitedPlaces);
+
+        List<String> your_array_list = new ArrayList<String>();
+        your_array_list.add("foo");
+        your_array_list.add("bar");
+        your_array_list.add("bar1");
+        your_array_list.add("bar2");
+        your_array_list.add("bar3");
+        your_array_list.add("bar4");
+
+        // This is the array adapter, it takes the context of the activity as a
+        // first parameter, the type of list view as a second parameter and your
+        // array as a third parameter.
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                this,
+                android.R.layout.simple_list_item_1,
+                your_array_list );
+
+        visitedPlaces.setAdapter(arrayAdapter);
 
     }
 }
