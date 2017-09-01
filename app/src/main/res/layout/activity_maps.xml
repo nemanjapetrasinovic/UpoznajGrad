@@ -14,16 +14,21 @@
 
         <Button
             android:id="@+id/btnFindPath"
-            style="@style/Widget.AppCompat.Button.Borderless"
+            style="@style/Widget.AppCompat.Button.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/ic_directions_black_48dp" />
+            android:layout_weight="0.3"
+            android:background="@color/colorPrimary"
+            android:foreground="@drawable/ic_directions_white_48px"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvDistance"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Kliknite da dugme pronadji putanju kako biste dobili uputstva za vožnju" />
+            android:layout_weight="1.7"
+            android:gravity="center"
+            android:text="Kliknite na dugme kako biste\n dobili uputstva za vožnju" />
 
     </LinearLayout>
 

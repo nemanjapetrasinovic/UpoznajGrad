@@ -2,6 +2,7 @@ package com.example.nemanja.upoznajgrad;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -61,7 +62,7 @@ public class SpotInfo extends AppCompatActivity {
                 Header.setText(s.getHeader());
                 Description.setText(s.getDesc());
 
-                Button map=(Button) findViewById(R.id.button5);
+                FloatingActionButton map=(FloatingActionButton) findViewById(R.id.floatingActionButton);
                 map.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
