@@ -1,7 +1,10 @@
 package com.example.nemanja.upoznajgrad;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,13 +48,6 @@ public class QuizResultsActivity extends AppCompatActivity {
         netacni=(TextView) findViewById(R.id.netacni);
         netacni.setText(wrong);
 
-        Button gotovo=(Button) findViewById(R.id.button2);
-        gotovo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -85,26 +81,48 @@ public class QuizResultsActivity extends AppCompatActivity {
 
 
     }
-    void addAdvards(Korisnik k)
-    {
-        String s=k.getPlaces();
-        Integer poeni=k.getScore();
+    void addAdvards(Korisnik k) {
+        String s = k.getPlaces();
+        Integer poeni = k.getScore();
+        String message;
 
-        if(poeni/47.0>=1.5 && poeni/47.0<2.0)
-            Toast.makeText(this, "Dobili ste bronzanu znacku", Toast.LENGTH_SHORT).show();
-        else if(poeni/47.0>=2 && poeni/47.0<2.5)
-            Toast.makeText(this, "Dobili ste serbrnu znacku", Toast.LENGTH_SHORT).show();
-        else if(poeni/47>=2.5)
-            Toast.makeText(this, "Dobili ste zlatnu znacku", Toast.LENGTH_SHORT).show();
+        if (poeni / 47.0 >= 1.5 && poeni / 47.0 < 2.0) {
+            message = "Čestitamo!!!! Dobili ste bronzanu znacku.";
+        } else if (poeni / 47.0 >= 2 && poeni / 47.0 < 2.5) {
+            message = "Čestitamo!!!! Dobili ste serbrnu znacku.";
+        } else if (poeni / 47 >= 2.5) {
+            message = "Čestitamo!!!! Dobili ste zlatnu znacku.";
+        }
+        else {
 
-        String brojMesta, preostalaMesta;
+            String brojMesta, preostalaMesta;
 
-        String [] posecenaMesta=k.getPlaces().split(",");
+            String[] posecenaMesta = k.getPlaces().split(",");
 
-        brojMesta=Integer.toString(posecenaMesta.length);
-        preostalaMesta=Integer.toString(47-posecenaMesta.length);
+            brojMesta = Integer.toString(posecenaMesta.length);
+            preostalaMesta = Integer.toString(47 - posecenaMesta.length);
+            message = "Obišli ste " + brojMesta + " lokacija, ostalo vam je još " + preostalaMesta + " lokacija.";
 
-        Toast.makeText(this, "Obisli ste "+brojMesta+" lokacija, ostalo vam je jos "+preostalaMesta + "lokacija", Toast.LENGTH_SHORT).show();
+        }
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(QuizResultsActivity.this);
+        builder1.setMessage(message);
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton("Continue",
+                new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // TODO Auto-generated method stub
+                        startActivity(new Intent(QuizResultsActivity.this,
+                                MainActivity.class));
+                    }
+                });
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+
 
     }
 }
