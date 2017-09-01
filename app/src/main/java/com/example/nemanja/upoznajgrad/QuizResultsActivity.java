@@ -104,7 +104,7 @@ public class QuizResultsActivity extends AppCompatActivity {
         brojMesta=Integer.toString(posecenaMesta.length);
         preostalaMesta=Integer.toString(47-posecenaMesta.length);
 
-        Toast.makeText(this, "Obisli ste "+brojMesta+" mesta, ostalo vam je jos "+preostalaMesta, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Obisli ste "+brojMesta+" lokacija, ostalo vam je jos "+preostalaMesta + "lokacija", Toast.LENGTH_SHORT).show();
 
     }
 }
