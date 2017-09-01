@@ -33,20 +33,20 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/niska_tvrdjava"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="300dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <TextView
@@ -72,13 +72,13 @@
                         android:id="@+id/imageView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:background="@drawable/nt" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/konstantin_veliki"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="500dp"
 
                     android:layout_marginTop="5dp"
                     android:background="@drawable/layout_border"
@@ -86,7 +86,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <TextView
@@ -112,7 +112,7 @@
                         android:id="@+id/imageView6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:background="@drawable/kv" />
                 </LinearLayout>
 
                 <LinearLayout

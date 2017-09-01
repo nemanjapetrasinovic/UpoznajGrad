@@ -9,8 +9,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,6 +24,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -775,6 +779,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+
     }
 
     private class MyMainLocalReceiver extends BroadcastReceiver {
@@ -788,6 +793,50 @@ public class MainActivity extends AppCompatActivity
             lat.setText(String.valueOf(latitude));*/
             Toast.makeText(getApplicationContext(), String.valueOf(latitude) +  " " + String.valueOf(longitude), Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void scaleBitmap(){
+        Resources res =MainActivity.this.getResources();
+        int id = R.drawable.nt;
+        Bitmap myBitmap = BitmapFactory.decodeResource(res,id);
+        int width = myBitmap.getWidth();
+        int height = myBitmap.getHeight();
+
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int widthScreen = size.x;
+        int heightScreen = size.y;
+
+        float odnos=widthScreen/width;
+        int maxWidth= width*Math.round(odnos);
+        int maxHeight=heightScreen;
+
+
+
+        Log.v("Pictures", "Width and height are " + width + "--" + height);
+
+        if (width > height) {
+            // landscape
+            float ratio = (float) width / maxWidth;
+            width = maxWidth;
+            height = (int)(height / ratio);
+        } else if (height > width) {
+            // portrait
+            float ratio = (float) height / maxHeight;
+            height = maxHeight;
+            width = (int)(width / ratio);
+        } else {
+            // square
+            height = maxHeight;
+            width = maxWidth;
+        }
+
+        Bitmap myScaledBitmap=Bitmap.createScaledBitmap(myBitmap,width,height,false);
+
+        ImageView i=(ImageView) findViewById(R.id.imageView5);
+        i.setImageBitmap(myScaledBitmap);
     }
 
 
