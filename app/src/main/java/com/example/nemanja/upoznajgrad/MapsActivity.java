@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -13,9 +14,11 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -66,7 +69,7 @@ import java.util.concurrent.Callable;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener {
 
     private GoogleMap mMap;
-    private Button btnFindPath;
+    private FloatingActionButton btnFindPath;
     //    private EditText etOrigin;
 //    private EditText etDestination;
     private List<Marker> originMarkers = new ArrayList<>();
@@ -109,7 +112,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        btnFindPath = (Button) findViewById(R.id.btnFindPath);
+        btnFindPath = (FloatingActionButton) findViewById(R.id.floatingActionButton2);
 
         btnFindPath.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -200,7 +203,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         for (Route route : routes) {
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(route.startLocation, 16));
             //((TextView) findViewById(R.id.tvDuration)).setText(route.duration.text);
-            ((TextView) findViewById(R.id.tvDistance)).setText("Destinacija je udaljena "+route.distance.text+"km");
+
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(MapsActivity.this);
+            builder1.setMessage("Destinacija je udaljena "+route.distance.text);
+            builder1.setCancelable(true);
+
+            builder1.setPositiveButton("Continue",
+                    new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // TODO Auto-generated method stub
+                        }
+                    });
+
+
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
+            //((TextView) findViewById(R.id.tvDistance)).setText("Destinacija je udaljena "+route.distance.text+"km");
 
             originMarkers.add(mMap.addMarker(new MarkerOptions()
                     .title(route.startAddress)
