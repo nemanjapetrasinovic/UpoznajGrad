@@ -172,8 +172,9 @@
             android:id="@+id/visitedPlaces"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@color/colorAccent"
-            android:dividerHeight="4px" />
+            android:layout_gravity="right"
+            android:divider="@color/common_google_signin_btn_text_light_focused"
+            android:dividerHeight="2px" />
     </LinearLayout>
 
 </LinearLayout>
