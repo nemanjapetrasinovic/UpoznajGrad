@@ -13,8 +13,8 @@ class Korisnik {
     public Integer score;
   //  public List<String> friends;
   //  public String picture;
-    public float latitude;
-    public float longitude;
+    public double latitude;
+    public double longitude;
     public String email;
     public String places;
 
@@ -80,11 +80,11 @@ class Korisnik {
  //   public void setPicture(String picture) {
 //        this.picture = picture;
 //    }
-    public float getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public float getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
@@ -92,11 +92,11 @@ class Korisnik {
         return email;
     }
 
-    public void setLatitude(float latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public void setLongitude(float longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 

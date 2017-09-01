@@ -14,9 +14,10 @@
 
         <Button
             android:id="@+id/btnFindPath"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pronadji putanju" />
+            android:drawableTop="@drawable/ic_directions_black_48dp" />
 
         <TextView
             android:id="@+id/tvDistance"

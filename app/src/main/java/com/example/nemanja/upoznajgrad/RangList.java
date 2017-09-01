@@ -19,6 +19,7 @@ import com.google.gson.Gson;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 import static android.R.attr.id;
 
@@ -26,8 +27,8 @@ public class RangList extends AppCompatActivity {
 
     DatabaseReference dref;
     ListView listview;
-    ArrayList<String> list=new ArrayList<>();
-    ArrayAdapter<String> adapter;
+    RangListAdapter adapter;
+    List<Korisnik> list;
     Gson gson=new Gson();
 
     @Override
@@ -38,7 +39,8 @@ public class RangList extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         listview=(ListView)findViewById(R.id.listview);
-        adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_activated_1,list);
+        list= new ArrayList<>();
+        adapter=new RangListAdapter(getApplicationContext(),list);
         listview.setAdapter(adapter);
 
         dref=FirebaseDatabase.getInstance().getReference("user");
@@ -47,10 +49,8 @@ public class RangList extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                 Korisnik p=dataSnapshot.getValue(Korisnik.class);
-
-                String value=String.valueOf(p.getFirstname()+" "+p.getLastname()+" "+p.getScore());
-
-                list.add(value);
+                list.add(p);
+                listview.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
 
