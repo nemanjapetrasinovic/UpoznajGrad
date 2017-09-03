@@ -149,7 +149,7 @@ public class MyService extends Service {
                                 PendingIntent.FLAG_UPDATE_CURRENT
                         );
                 mBuilder.setContentIntent(resultPendingIntent);
-                if(distance<=5000.00){
+                if(distance<=50.00){
                     mNotifyMgr.notify(keyNotificationMap.get(s.getHeader()), mBuilder.build());
                     mNotificationId++;
                 }
