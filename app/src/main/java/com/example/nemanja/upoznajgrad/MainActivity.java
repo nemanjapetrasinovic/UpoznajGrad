@@ -513,10 +513,10 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
-                openInfo.putExtra("spot","cele_kula");
+                openInfo.putExtra("spot","hamam");
                 ArrayList<Integer> images=new ArrayList<Integer>();
-                images.add(R.drawable.celekula);
-                images.add(R.drawable.celekula1);
+                images.add(R.drawable.hamam);
+                images.add(R.drawable.hamam1);
                 openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
