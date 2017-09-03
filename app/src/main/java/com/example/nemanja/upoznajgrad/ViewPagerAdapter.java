@@ -1,6 +1,7 @@
 package com.example.nemanja.upoznajgrad;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
+
+import java.util.ArrayList;
 
 /**
  * Created by Marija on 9/3/2017.
@@ -18,16 +21,16 @@ public class ViewPagerAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private Integer[] images;
+    private ArrayList<Integer> images;
 
-    public ViewPagerAdapter(Context context, Integer[] images) {
+    public ViewPagerAdapter(Context context, ArrayList<Integer> images) {
         this.context = context;
         this.images = images;
     }
 
     @Override
     public int getCount() {
-        return images.length;
+        return images.size();
     }
 
     @Override
@@ -41,7 +44,7 @@ public class ViewPagerAdapter extends PagerAdapter {
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slider_layout, null);
         ImageView imageView = (ImageView) view.findViewById(R.id.imageViewSlideItem);
-        imageView.setImageResource(images[position]);
+        imageView.setImageResource(images.get(position));
 
         ViewPager vp=(ViewPager) container;
         vp.addView(view,0);

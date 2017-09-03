@@ -49,7 +49,7 @@ public class RangList extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                 Korisnik p=dataSnapshot.getValue(Korisnik.class);
-                list.add(p);
+                list.add(0,p);
                 listview.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }

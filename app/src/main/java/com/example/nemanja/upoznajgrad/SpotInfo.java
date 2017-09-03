@@ -20,6 +20,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class SpotInfo extends AppCompatActivity {
 
     ProgressDialog progressDialog;
@@ -40,7 +42,7 @@ public class SpotInfo extends AppCompatActivity {
 
 
 
-        Integer [] images = {R.drawable.aaaa,R.drawable.unnamed};
+        ArrayList<Integer> images = getIntent().getIntegerArrayListExtra("images");
 
         viewPager = (ViewPager) findViewById(R.id.imageViewSlider);
         sliderDotspanel=(LinearLayout)findViewById(R.id.SliderDots);

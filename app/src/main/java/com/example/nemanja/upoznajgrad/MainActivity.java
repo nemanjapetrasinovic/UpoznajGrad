@@ -1,11 +1,9 @@
 package com.example.nemanja.upoznajgrad;
 
-import android.*;
 import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -13,16 +11,11 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
@@ -34,7 +27,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -52,9 +44,6 @@ import com.google.firebase.storage.StorageReference;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -315,6 +304,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","niska_tvrdjava");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.nt);
+                images.add(R.drawable.nt1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -325,6 +318,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","konstantin_veliki");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.kv);
+                images.add(R.drawable.kv1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -335,6 +332,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","Medijana");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.medijana);
+                images.add(R.drawable.medijana1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -345,6 +346,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","cele_kula");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.celekula);
+                images.add(R.drawable.celekula1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -355,6 +360,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","latinska_crkva");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.latinskacrkva);
+                images.add(R.drawable.latinskacrkva1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -365,6 +374,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","crkva_sveti_nikola");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.crkvasvetinikola);
+                images.add(R.drawable.crkvasvetinikola1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -375,6 +388,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","sinagoga");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.sinagoga);
+                images.add(R.drawable.sinagoga1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -385,6 +402,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","zgrada_banovine");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.zgradabanovine);
+                images.add(R.drawable.zgradabanovine1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -395,6 +416,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","oficirski_dom");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.oficirskidom);
+                images.add(R.drawable.oficirkidom1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -405,6 +430,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","crkva_svetog_pantelejmona");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.crkvasvetogpantelejmona);
+                images.add(R.drawable.crkvasvetopantelejmona1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -415,6 +444,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","crkva_svetog_arhangela_mihaila");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.crkvasvetogarhangelamihaila);
+                images.add(R.drawable.crkvasvetogarhangelamihaila1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -425,6 +458,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","saborna_crkva_svete_trojice");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.sabornacrkvasvetetrojice);
+                images.add(R.drawable.sabornacrkvasvetetrojice1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -435,6 +472,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","spomen_kompleks_bubanj");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.spomenkompleksbubanj);
+                images.add(R.drawable.spomenkompleksbubanj1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -445,6 +486,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","muzej_na_crvenom_krstu");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.muzejnacrvenomkrstu);
+                images.add(R.drawable.muzejnacrvenomkrstu1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -455,6 +500,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","spomenik_oslobodiocima_nisa");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.spomenikoslobodiocimanisa);
+                images.add(R.drawable.spomenikoslobodiocimanisa1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -465,6 +514,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","cele_kula");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.celekula);
+                images.add(R.drawable.celekula1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -475,6 +528,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","dzamija_balije_jedrenca");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.dzamijabalijejedrenca);
+                images.add(R.drawable.dzamijabalijejedrenca1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -485,6 +542,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","ulica_iz_doba_justinijana_prvog");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.ulicaizdobajustinijanaprvog);
+                images.add(R.drawable.ulicaizdobajustinijanaprvog1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -495,6 +556,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","barutane");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.barutane);
+                images.add(R.drawable.barutane1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -505,6 +570,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","letnja_pozornica");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.letnjapozornica);
+                images.add(R.drawable.letnjapozornica1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -515,6 +584,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","ranovizantijska_grobnica");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.ranovizantijskagrobnica);
+                images.add(R.drawable.ranovizantijskagrobnica1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -525,6 +598,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","narodno_pozoriste");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.narodnopozoriste);
+                images.add(R.drawable.narodnopozoriste1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -535,6 +612,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","crkva_svete_trojice_u_gabrovcu");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.crkvasvetetrojiceugabrovcu);
+                images.add(R.drawable.crkvasvetetrojiceugabrovcu1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -545,6 +626,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","spomen_kosturnica");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.kosturnica);
+                images.add(R.drawable.kosturnica1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -555,6 +640,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","spomenik_knezu_milanu_obrenovicu");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.spomenikknezumilanuobrenovicu);
+                images.add(R.drawable.spomenikknezumilanuobrenovicu1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -565,6 +654,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","lapidarijum");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.lapidarijum);
+                images.add(R.drawable.lapidarijum1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -575,6 +668,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","arsenal");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.arsenal);
+                images.add(R.drawable.arsenal1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -585,6 +682,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","objekat_sa_svodovima");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.objekatsasvodovima);
+                images.add(R.drawable.objekatsasvodovima1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -595,6 +696,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","palata_sa_oktagonom");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.palatasaoktagonom);
+                images.add(R.drawable.palatasaoktagonom1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -605,6 +710,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","arheoloska_sala");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.arheoloskasala);
+                images.add(R.drawable.arheoloskasala1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -615,6 +724,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","osnovni_sud_u_nisu");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.osnovnisudunisu);
+                images.add(R.drawable.osnovnisudunisu1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -625,6 +738,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","kazandzijsko_sokace");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.aaaa);
+                images.add(R.drawable.unnamed);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -635,6 +752,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","gradska_kuca");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.gradskakuca);
+                images.add(R.drawable.gradskakuca1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -645,6 +766,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","zgrada_trgovca_andona_andonovica");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.kucatrgovcaandonaandonovica);
+                //images.add(R.drawable.gradskakuca1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -655,6 +780,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","cairska_cesma");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.cairskacesma);
+                images.add(R.drawable.cairskacesma1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -665,6 +794,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","kuca_stambolijskih");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.kucastambolijskih);
+                images.add(R.drawable.kucastambolijskih1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -675,6 +808,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","zgrada_glavne_poste");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.zgradaglavneposte);
+                images.add(R.drawable.zgradabanovine1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -685,6 +822,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","spomenik_kralju_aleksandru_i_karadjordjevicu");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.spomenikkraljualeksandrukaradjordjevicu);
+                images.add(R.drawable.spomenikkraljualeksandrukaradjordjevicu1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -695,6 +836,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","pasterov_zavod");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.pasterovzavod);
+                images.add(R.drawable.pasterovzavod1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -705,6 +850,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","srpsko_vojnicko_groblje");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.srpskovojnickogroblje);
+                //images.add(R.drawable.pasterovzavod1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -715,6 +864,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","vojno_groblje_britanskog_komonvelta");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.vojnogrobljebritanskogkomonvelta);
+                //images.add(R.drawable.pasterovzavod1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -725,6 +878,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","spomenik_na_cegru");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.spomeniknacegru);
+                images.add(R.drawable.spomeniknacegru1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -735,6 +892,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","humska_cuka");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.humskacuka);
+                images.add(R.drawable.humskacuka1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -745,6 +906,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","niska_banja");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.niskabanja);
+                images.add(R.drawable.niskabanja1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -755,6 +920,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","sicevacka_klisura");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.sicevackaklisura);
+                images.add(R.drawable.sicevackaklisura1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -765,6 +934,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","crkva_svete_petke_iverica");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.crkvasvetepetkeiverica);
+                //images.add(R.drawable.sicevackaklisura1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
@@ -775,6 +948,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent openInfo=new Intent(MainActivity.this.getApplicationContext(),SpotInfo.class);
                 openInfo.putExtra("spot","manastir_sveta_bogorodica");
+                ArrayList<Integer> images=new ArrayList<Integer>();
+                images.add(R.drawable.manastirsvetabogorodica);
+                //images.add(R.drawable.sicevackaklisura1);
+                openInfo.putExtra("images",images);
                 startActivity(openInfo);
             }
         });
