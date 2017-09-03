@@ -1045,9 +1045,11 @@
 
                     <ImageView
                         android:id="@+id/imageView28"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/kosturnica" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1085,9 +1087,11 @@
 
                     <ImageView
                         android:id="@+id/imageView29"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/spomenikknezumilanuobrenovicu" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1125,9 +1129,11 @@
 
                     <ImageView
                         android:id="@+id/imageView30"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/lapidarijum" />
 
                 </LinearLayout>
 
@@ -1165,9 +1171,11 @@
 
                     <ImageView
                         android:id="@+id/imageView31"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/arsenal" />
 
                 </LinearLayout>
 
@@ -1208,9 +1216,11 @@
 
                     <ImageView
                         android:id="@+id/imageView32"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/objekatsasvodovima" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -1254,9 +1264,11 @@
 
                     <ImageView
                         android:id="@+id/imageView33"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/palatasaoktagonom" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1294,9 +1306,11 @@
 
                     <ImageView
                         android:id="@+id/imageView34"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/arheoloskasala" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1334,9 +1348,11 @@
 
                     <ImageView
                         android:id="@+id/imageView35"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/osnovnisudunisu" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1374,9 +1390,11 @@
 
                     <ImageView
                         android:id="@+id/imageView36"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/kazandzijskosokace" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1414,9 +1432,11 @@
 
                     <ImageView
                         android:id="@+id/imageView37"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/gradskakuca" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1454,9 +1474,11 @@
 
                     <ImageView
                         android:id="@+id/imageView38"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/kucatrgovcaandonaandonovica" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1494,9 +1516,11 @@
 
                     <ImageView
                         android:id="@+id/imageView39"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/cairskacesma" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1534,9 +1558,11 @@
 
                     <ImageView
                         android:id="@+id/imageView40"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/kucastambolijskih" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1574,9 +1600,11 @@
 
                     <ImageView
                         android:id="@+id/imageView41"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/zgradaglavneposte" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1614,9 +1642,11 @@
 
                     <ImageView
                         android:id="@+id/imageView42"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/spomenikkraljualeksandrukaradjordjevicu" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1654,9 +1684,11 @@
 
                     <ImageView
                         android:id="@+id/imageView43"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/pasterovzavod" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1694,9 +1726,11 @@
 
                     <ImageView
                         android:id="@+id/imageView44"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/srpskovojnickogroblje" />
 
                 </LinearLayout>
 
@@ -1735,9 +1769,11 @@
 
                     <ImageView
                         android:id="@+id/imageView45"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/vojnogrobljebritanskogkomonvelta" />
 
                 </LinearLayout>
 
@@ -1778,9 +1814,11 @@
 
                     <ImageView
                         android:id="@+id/imageView46"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/spomeniknacegru" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -1824,9 +1862,11 @@
 
                     <ImageView
                         android:id="@+id/imageView47"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/humskacuka" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1858,15 +1898,17 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1.7"
-                            android:text="NIška Banja"
+                            android:text="Niška Banja"
                             android:textSize="12pt" />
                     </LinearLayout>
 
                     <ImageView
                         android:id="@+id/imageView48"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/niskabanja" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1904,9 +1946,11 @@
 
                     <ImageView
                         android:id="@+id/imageView49"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/sicevackaklisura" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1944,9 +1988,11 @@
 
                     <ImageView
                         android:id="@+id/imageView50"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/crkvasvetepetkeiverica" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1984,9 +2030,11 @@
 
                     <ImageView
                         android:id="@+id/imageView51"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/manastirsvetabogorodica" />
                 </LinearLayout>
 
             </LinearLayout>
