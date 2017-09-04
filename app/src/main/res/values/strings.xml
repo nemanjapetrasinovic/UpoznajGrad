@@ -11,4 +11,9 @@
 
     <string name="title_activity_rang_list">RangList</string>
     <string name="title_activity_maps2">Map</string>
+
+    <string name="intro">Aplikacije upoznaj grad je aplikacija namenjena za upoznavanje grada Niša. Cilj aplikacije je da pronađete mesta
+    koja želite da obiđete. Na glavnoj strani aplikacije pronaći ćete listu mesta koja želite da obiđete, a klikom na neko mesto dobićete
+    informacije o tom mestu kao i putanju do željene destinacije. Skeniranjem QR koda koji je postavljen na određenoj destinaciji
+    pokrećete kviz. Odgovaranjem na pitanja osvajate poene i učestvujete u igri za medalju poznavaoca Niša.</string>
 </resources>
